@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{articulo.titulo}}{% endblock %}
+
+{% block body %}
+
+    <div class="row p-3">
+        <div class="col-9">
+            <h1 class="display-5">{{articulo.titulo}}</h1>
+        </div>
+        <div class="col-3">
+            <h1 class="display-5">{{articulo.fecha|date('Y-m-d')}}</h1>
+        </div>
+    </div>
+    <div class="row p-3">
+        <div class="col-12">
+            <p>Resumen: {{articulo.resumen}}</p>
+        </div>
+    </div>
+    <div class="row p-3">
+        <div class="col-4">
+            <p class="text-center fs-3">
+            {% if articulo.categoria == 'opi' %}
+                Categoria: Opinión
+            {% elseif articulo.categoria == 'div' %}
+                Categoria: Divulgación
+            {% elseif articulo.categoria == 'inf' %}
+                Categoria: Informativo
+            {% elseif articulo.categoria == 'repor' %}
+                Categoria: Reportaje
+            {% elseif articulo.categoria == 'edit' %}
+                Categoria: Opinión
+            {% elseif articulo.categoria == 'col' %}
+                Categoria: Editorial
+            {% elseif articulo.categoria == 'entr' %}
+                Categoria: Entrevista  
+            {% elseif articulo.categoria == 'crit' %}
+                Categoria: Crítica
+            {% elseif articulo.categoria == 'otros' %}
+                Categoria: Otros 
+            {% endif %}
+            </p>
+        </div>
+        <div class="col-4">
+            <p class="text-center fs-3">
+            {% if articulo.medio == 'papel' %}
+                Medio: Papel
+            {% elseif articulo.medio == 'dig' %}
+                Medio: Digital 
+            {% endif %}
+            </p>
+        </div>
+        <div class="col-4">
+            <p class="text-center fs-3">{{articulo.comentario}}</p>
+        </div>
+    </div>
+    <div class="row p-3">
+        <div class="col-12">
+            <p>{{articulo.texto}}</p>
+        </div>
+    </div>
+     <div class="row p-3">
+        <div class="col-8">
+            <a class="link-success ms-5" href="{{articulo.url}}">URL del artículo</a>
+        </div>
+        <div class="col-4 d-flex justify-content-end">
+            <a class="btn btn-success me-4" href="/editar/{{articulo.id}}" role="button">Editar</a>
+            <a class="btn btn-danger me-4" href="/eliminar/{{articulo.id}}" role="button">Borrar</a>
+        </div>
+    </div>
+
+{% endblock %}

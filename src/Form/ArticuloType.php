@@ -7,6 +7,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 class ArticuloType extends AbstractType
 {
@@ -20,24 +21,25 @@ class ArticuloType extends AbstractType
             ->add('resumen')
             ->add('categoria', ChoiceType::class, [
                 'choices' => [
-                    'Opinión' => 1,
-                    'Divulgación' => 2,
-                    'Informativo' => 3,
-                    'Reportaje' => 4,
-                    'Editorial' => 5,
-                    'Columna' => 6,
-                    'Entrevista' => 7,
-                    'Crítica' => 8,
-                    'Otros' => 9,
+                    'Opinión' => 'opi',
+                    'Divulgación' => 'div',
+                    'Informativo' => 'inf',
+                    'Reportaje' => 'repor',
+                    'Editorial' => 'edit',
+                    'Columna' => 'col',
+                    'Entrevista' => 'entr',
+                    'Crítica' => 'crit',
+                    'Otros' => 'otros',
                 ]
             ])
             ->add('url')
             ->add('medio', ChoiceType::class, [
                 'choices' => [
-                    'Papel' => 1,
-                    'Digital' => 2,
+                    'Papel' => 'papel',
+                    'Digital' => 'dig',
                 ]
             ])
+            ->add('Agregar', SubmitType::class)
         ;
     }
 

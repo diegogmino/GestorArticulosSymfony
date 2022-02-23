@@ -13,7 +13,7 @@ class Articulo
     #[ORM\Column(type: 'integer')]
     private $id;
 
-    #[ORM\Column(type: 'text')]
+    #[ORM\Column(type: 'string', length: 200)]
     private $titulo;
 
     #[ORM\Column(type: 'date')]

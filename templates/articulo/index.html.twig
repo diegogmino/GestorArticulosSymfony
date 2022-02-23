@@ -1,20 +1,48 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ArticuloController!{% endblock %}
+{% block title %}Listado Artículos{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <div class="row">
+        <div class="col-3">
+            <h1 class="text-center mt-1">Filtros</h1>
+            <div class="list-group mt-3">
+                <a class="btn list-group-item list-group-item-action" href="/" role="button">Todos</a>
+                <a class="btn list-group-item list-group-item-action" href="/filtrar/opi" role="button">Opinión</a>
+                <a class="btn list-group-item list-group-item-action" href="/filtrar/div" role="button">Divulgación</a>
+                <a class="btn list-group-item list-group-item-action" href="/filtrar/inf" role="button">Informativo</a>
+                <a class="btn list-group-item list-group-item-action" href="/filtrar/repor" role="button">Reportaje</a>
+                <a class="btn list-group-item list-group-item-action" href="/filtrar/edit" role="button">Editorial</a>
+                <a class="btn list-group-item list-group-item-action" href="/filtrar/col" role="button">Columna</a>
+                <a class="btn list-group-item list-group-item-action" href="/filtrar/entr" role="button">Entrevista</a>
+                <a class="btn list-group-item list-group-item-action" href="/filtrar/crit" role="button">Crítica</a>
+                <a class="btn list-group-item list-group-item-action" href="/filtrar/otros" role="button">Otros</a>
+                
+            </div>
+        </div>
+        <div class="col-9">
+            <h1 class="text-center mt-1">Categoría</h1>
+            <!-- Bloque para hacer el for y listar -->
+            {% for articulo in articulos %}
+                <div class="ps-5 pe-5 pt-2 pb-2 bg-warning mb-2 mt-3">
+                    <div class="row mb-2">
+                        <div class="col-8 fs-3">{{articulo.titulo}}</div>
+                        <div class="col-4 d-flex justify-content-end fs-3">{{articulo.fecha|date('Y-m-d')}}</div>
+                    </div>
+                    <div class="row">
+                        <p>{{articulo.resumen}}</p>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 d-flex justify-content-end">
+                            <a class="btn btn-primary" href="/articulo/{{articulo.id}}" role="button">Ver</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            <!-- Fin del bloque para hacer el for y listar -->
+        </div>
+    </div>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'D:/2º DAW/DAW/PRÁCTICAS/SYMFONY/P4DAWGarciaDiego/src/Controller/ArticuloController.php'|file_link(0) }}">src/Controller/ArticuloController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'D:/2º DAW/DAW/PRÁCTICAS/SYMFONY/P4DAWGarciaDiego/templates/articulo/index.html.twig'|file_link(0) }}">templates/articulo/index.html.twig</a></code></li>
-    </ul>
-</div>
+
 {% endblock %}

@@ -37,13 +37,13 @@ class ArticuloRepository extends ServiceEntityRepository
     
 
     
-    public function findOneBySomeField($value): ?Articulo
+    public function buscarPorCategoria($cat): array
     {
         return $this->createQueryBuilder('a')
-            ->andWhere('a.exampleField = :val')
-            ->setParameter('val', $value)
+            ->andWhere('a.categoria = :cat')
+            ->setParameter('cat', $cat)
             ->getQuery()
-            ->getOneOrNullResult()
+            ->execute()
         ;
     }
     
