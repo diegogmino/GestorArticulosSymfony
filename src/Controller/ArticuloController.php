@@ -33,7 +33,7 @@ class ArticuloController extends AbstractController
             return $this->redirectToRoute('index');
         }
         
-        return $this->renderForm('articulo/formulario.html.twig', [
+        return $this->renderForm('formulario.html.twig', [
             'form' => $form,
             'mensaje' => 'Agregando nuevo artículo'
         ]);
@@ -71,9 +71,10 @@ class ArticuloController extends AbstractController
             return $this->redirectToRoute('index');
         }
         
-        return $this->renderForm('articulo/formulario.html.twig', [
+        return $this->renderForm('formularioEditar.html.twig', [
             'form' => $form,
-            'mensaje' => 'Editando'
+            'mensaje' => 'Editando',
+            'id' => $id
         ]);
         
     }
@@ -84,7 +85,7 @@ class ArticuloController extends AbstractController
         $entityManager = $doctrine->getManager();
         $articulos = $entityManager->getRepository(Articulo::class)->findAll();
         
-        return $this->renderForm('articulo/index.html.twig', [
+        return $this->renderForm('index.html.twig', [
             'articulos' => $articulos,
         ]);
         
@@ -97,7 +98,7 @@ class ArticuloController extends AbstractController
         $articulos = $entityManager->getRepository(Articulo::class)->buscarPorCategoria($filtro);
 
         
-        return $this->renderForm('articulo/index.html.twig', [
+        return $this->renderForm('index.html.twig', [
             'articulos' => $articulos,
         ]);
         
@@ -110,7 +111,7 @@ class ArticuloController extends AbstractController
         $articulo = $entityManager->getRepository(Articulo::class)->find($id);
 
         
-        return $this->renderForm('articulo/verArticulo.html.twig', [
+        return $this->renderForm('verArticulo.html.twig', [
             'articulo' => $articulo,
         ]);
         

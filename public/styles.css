@@ -1,3 +1,36 @@
+/* Estilos de la barra de scroll */
+
+/* Cambia el ancho de la barra de scroll */
+body::-webkit-scrollbar {
+    width: 20px;
+}
+
+/* Modifica los estilos de la propia barra de scroll */
+body::-webkit-scrollbar-thumb {
+    background-color: #d6dee1;
+    border-radius: 20px;
+    border: 6px solid transparent;
+    background-clip: content-box;
+}
+
+/* Cambia el color de la barra de scroll al poner el cursor encima */
+body::-webkit-scrollbar-thumb:hover {
+    background-color: #B48EAE;
+    border-radius: 20px;
+    border: 6px solid transparent;
+    background-clip: content-box;
+}
+
 .cabecera{
     background-color: #B48EAE;
+    color: black;
+}
+
+.fondo-listar{
+    background-color: #D7D9D7;
+    border-radius: 15px;
+}
+
+.negrita {
+    font-weight:bold;
 }

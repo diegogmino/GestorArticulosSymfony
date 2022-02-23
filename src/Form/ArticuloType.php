@@ -39,7 +39,6 @@ class ArticuloType extends AbstractType
                     'Digital' => 'dig',
                 ]
             ])
-            ->add('Agregar', SubmitType::class)
         ;
     }
 
