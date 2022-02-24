@@ -27,10 +27,6 @@ body::-webkit-scrollbar-thumb:hover {
     color: black;
 }
 
-a {
-    color:white !important;
-}
-
 .fondo-listar{
     background-color: #D7D9D7;
     border-radius: 15px;
