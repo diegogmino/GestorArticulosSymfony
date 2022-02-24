@@ -8,12 +8,19 @@
     {{ form_start(form) }}
     {{ form_widget(form) }}
 
-    <div class="row mb-4">
-        <div class="col-sm-offset-2 col-sm-10">
-            <button type="submit" value="agregar" class="btn btn btn-outline-success">Agregar</button>
-            <a class="btn btn btn-outline-danger" href="/" role="button">Volver</a>
+    <div class="row mb-4 d-flex flex-row-reverse">
+        <div class="col-1 d-flex justify-content-end">
+            <button type="submit" value="agregar" class="btn btn btn-outline-success">Editar</button>
+        </div>
+        <div class="col-1 d-flex justify-content-end">
+            <a class="btn btn btn-outline-danger" href="/articulo/{{id}}" role="button">Volver</a>
+        </div>
+        <div class="col-1 d-flex justify-content-end">
             <a class="btn btn btn-outline-dark" href="/editar/{{id}}" role="button">Reset</a>
         </div>
+            
+            
+            
     </div>
     {{ form_end(form) }}
 

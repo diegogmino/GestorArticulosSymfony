@@ -43,7 +43,9 @@ class ArticuloController extends AbstractController
     public function eliminar(Request $request, ManagerRegistry $doctrine, int $id): Response
     {
         $entityManager = $doctrine->getManager();
+        //Buscamos por id
         $articulo = $entityManager->getRepository(Articulo::class)->find($id);
+        //Borramos el articulo encontrado
         $entityManager->remove($articulo);
         $entityManager->flush();
 
@@ -68,7 +70,7 @@ class ArticuloController extends AbstractController
             $entityManager->persist($articulo);
             $entityManager->flush();
 
-            return $this->redirectToRoute('index');
+            return $this->redirectToRoute('mostrarArticulo', ['id' => $id]);
         }
         
         return $this->renderForm('formularioEditar.html.twig', [
@@ -83,6 +85,7 @@ class ArticuloController extends AbstractController
     public function listarTodos(Request $request, ManagerRegistry $doctrine): Response
     {
         $entityManager = $doctrine->getManager();
+        //Listamos todos los articulos
         $articulos = $entityManager->getRepository(Articulo::class)->findAll();
         
         return $this->renderForm('index.html.twig', [
@@ -95,6 +98,7 @@ class ArticuloController extends AbstractController
     public function buscarCat(Request $request, ManagerRegistry $doctrine, String $filtro): Response
     {
         $entityManager = $doctrine->getManager();
+        //Hacemos uso del método definido en el Repository para filtrar por categoria
         $articulos = $entityManager->getRepository(Articulo::class)->buscarPorCategoria($filtro);
 
         

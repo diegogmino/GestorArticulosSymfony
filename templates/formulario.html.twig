@@ -8,10 +8,14 @@
     {{ form_start(form) }}
     {{ form_widget(form) }}
 
-    <div class="row mb-4">
-        <div class="col-sm-offset-2 col-sm-10">
+    <div class="row mb-4 d-flex flex-row-reverse">
+        <div class="col-1 d-flex justify-content-end">
             <button type="submit" value="agregar" class="btn btn btn-outline-success">Agregar</button>
+        </div>
+        <div class="col-1 d-flex justify-content-end">
             <a class="btn btn btn-outline-danger" href="/" role="button">Volver</a>
+        </div>
+        <div class="col-1 d-flex justify-content-end">
             <a class="btn btn btn-outline-dark" href="/nuevo" role="button">Reset</a>
         </div>
     </div>

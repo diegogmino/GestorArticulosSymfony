@@ -36,7 +36,7 @@ class ArticuloRepository extends ServiceEntityRepository
     }
     
 
-    
+    //Método que filtra por categoria de articulo
     public function buscarPorCategoria($cat): array
     {
         return $this->createQueryBuilder('a')

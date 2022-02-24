@@ -5,16 +5,18 @@
 {% block body %}
 
     <div class="row p-3">
-        <div class="col-9">
+        <div class="col-12 text-center">
             <h1 class="display-5">{{articulo.titulo}}</h1>
         </div>
-        <div class="col-3">
-            <h1 class="display-5">{{articulo.fecha|date('Y-m-d')}}</h1>
+    </div>
+    <div class="row p-3">
+        <div class="col-12 text-center">
+            <h1 class="fs-3">{{articulo.fecha|date('d-m-Y')}}</h1>
         </div>
     </div>
     <div class="row p-3">
         <div class="col-12">
-            <p>Resumen: {{articulo.resumen}}</p>
+            <p><span class="negrita">Resumen:</span> {{articulo.resumen}}</p>
         </div>
     </div>
     <div class="row p-3">

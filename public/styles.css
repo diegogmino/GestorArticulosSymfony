@@ -21,9 +21,14 @@ body::-webkit-scrollbar-thumb:hover {
     background-clip: content-box;
 }
 
+/* Estilos página principal */
 .cabecera{
     background-color: #B48EAE;
     color: black;
+}
+
+a {
+    color:white !important;
 }
 
 .fondo-listar{
