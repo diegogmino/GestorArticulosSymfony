@@ -3,19 +3,16 @@
 ## Descripción general del proyecto
 Este proyecto ha sido creado siguiendo el enunciado planteado. Se ha desarrollado una aplicación web haciendo uso de **Symfony** con **Boostrap 5** que gestiona una colección de artículos, pudiendo añadirlos, eliminarlos, editarlos y filtrarlos por las diversas categorías que se dejan a disposición del usuario. Se han añadido unos estilos ajenos al _framework_ **Boostrap 5** con **CSS** para así darle un toque más personalizado.
 
----
 
 ## Cómo se usa el proyecto
 
 Una vez que se ha ejecutado el proyecto y se ha entrado en la página principal se muestran una serie de opciones al usuario. En primer lugar, en la columna de la izquierda se encuentran (en forma de lista) todas y cada una de las categorías por las que los usuarios pueden filtrar. Si se pulsa en cualquiera de ellas se mostrarán los articulos cuya categoría coincida con la seleccionada. Si no existe ningún artículo que se adscriba a la categoría seleccionada no se mostrará nada. En la parte superior derecha de la pantalla se encuentra un botón con un símbolo de "+", el cual, al ser pulsado, mandará al usuario a una pantalla con un formulario que tendrá que rellenar para poder agregar un artículo a la base de datos. Una vez de nuevo en la pantalla principal, en cada artículo listado se puede observar un botón de "Ver", el cual llevará al usuario a una página en la que se puede visualizar, en detalle, el artículo en cuestión. En dicha página de detalle se encuentra un botón de **Editar** y otro de **Eliminar**. El botón de **Editar** llevará al usuario a un formulario similar al de introducir un nuevo artículo con todos los datos ya introducidos y preparados para ser modificados. El botón de **Eliminar** hará lo propio, es decir, eliminar el artículo en custión y devolver al usuario a la página principal.
 
----
 
 ## Requisitos del entorno de desarrollo
 
 Para el desarrollo de esa aplicación web se necesita tener instalado todo lo necesario para hacer uso de _framework_ **Symfony**, así como también contar con un software como **Visual Studio Code** para escribir todo el código del programa con las facilidades que este tipo de aplicaciones dan.
 
----
 
 ## Guía de instalación y funcionamiento
 
@@ -32,7 +29,6 @@ symfony server:start
 
 Con esto se ejecutará la aplicación en un servidor local, permitiendo ver cómo funciona y navegar por ella con total normalidad.
 
----
 
 ## Tecnologías utilizadas
 
@@ -43,13 +39,11 @@ Con esto se ejecutará la aplicación en un servidor local, permitiendo ver cóm
 |  **CSS**    |    3   |
 | **HTML**    |    5   |
 
----
 
 ## Autor o autores
 
 Esta práctica ha sido realizada por **Diego García Miño** para la asignatura de **Despliegue de Aplicaciones Web**.
 
----
 
 ## Licencia
 
@@ -74,8 +68,6 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
----
 
 ## Cómo contribuir al proyecto
 
